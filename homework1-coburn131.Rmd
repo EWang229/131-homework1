@@ -85,4 +85,4 @@ corrplot(corr_mpg, method = "square", order = "alphabet", type = "lower")
 ```
 The variables that are positively correlated are cty and hwy.  
 The variables that are negatively correlated are displ and cty, and displ and hwy.  
-These relationships make sense because if cty and hwy are strongly, positively correlated, then it makes sense that both of them would have a similar relationship for a given variable from the dataset.
+These relationships make sense because if cty and hwy are strongly, positively correlated, then it makes sense that both of them would have a similar relationship to a given variable from the dataset.
