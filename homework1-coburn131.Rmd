@@ -50,6 +50,7 @@ library(ggplot2)
 ```{r, message = FALSE}
 ggplot(mpg, aes(x = hwy)) + geom_histogram()
 ```
+I see that the distribution of highway miles per gallon has two peaks. It seems that most cars seem to have highway miles per gallon in the mid 10's and mid 20's. Very few people have highway miles per gallon above 30.
 
 # Exercise 2
 ```{r}
