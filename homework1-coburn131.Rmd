@@ -23,7 +23,7 @@ Two commonly used metrics for classification ML problems are: Training Error Rat
 
 4. Descriptive Models: We use this if we want to "best visually emphasize a trend in data" (lecture notes day 2). An example is using a line on a scatterplot.  
 Inferential Models: We use this if we want to see "which features are significant" or "state the relationship between outcome and predictor(s)" (lecture notes day 2). The aim is to test theories and possibly make causal claims.  
-Predictive Models: We use this if we want to "see which combo of features works best" and "predict Y with minimum reducible error" (lecture notes day 2). They are not focused on hypothesis tests. 
+Predictive Models: We use this if we want to "see which combo of features works best" and "predict Y with minimum reducible error" (lecture notes day 2). They are not focused on hypothesis tests, rather, we're usually focused on just making predictions about the future.
 
 5.  
 i) In ML, mechanistic means that we assume that there is some parametric function that fits that data which we try to get as close as possible to. Generally, mechanistic describes something that relates to theories to explain phenomena.  
@@ -79,10 +79,11 @@ library(corrplot)
 ```
 
 ```{r}
-mpg_numerical <- mpg %>% select(displ, cty, hwy)
+mpg_numerical <- mpg %>% select(displ, cyl, cty, hwy)
 corr_mpg <- cor(mpg_numerical)
 corrplot(corr_mpg, method = "square", order = "alphabet", type = "lower")
 ```
-The variables that are positively correlated are cty and hwy.  
-The variables that are negatively correlated are displ and cty, and displ and hwy.  
-These relationships make sense because if cty and hwy are strongly, positively correlated, then it makes sense that both of them would have a similar relationship to a given variable from the dataset.
+The variables that are positively correlated are cty and hwy, and disply and cyl.  
+The variables that are negatively correlated are displ and cty, displ and hwy, cyl and cty, and cyl and hwy.  
+These relationships make sense because if two variables are strongly and positively correlated, then it would make sense that both of them would have similar correlations to another given variable in the dataset. This is why cty and hwy are both negatively correlated with displ and cyl.  
+Thinking about this problem in a non-mathematical way, these relationships do make sense. If a car has good city mpg, then it should almost certainly have the same/better highway mpg. Additionally, the engine displacement calculation depends on the number of cylinders. A higher number of cylinders means more engine displacement, so the positive correlation between displ and cyl makes sense as well.
