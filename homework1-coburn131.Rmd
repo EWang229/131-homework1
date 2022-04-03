@@ -35,9 +35,9 @@ ii) In general, a mechanistic model is easier to understand because you are assu
 iii) The bias-variance tradeoff is related to the use of mechanistic or empirically-driven models because it allows us to analyze when our model is overfitting or underfitting. A low complexity model has high bias and low variance, while a high complexity model has low bias and high variance. We want to find a model that has the smallest amount of bias and variance.
 
 6. "Given a voter’s profile/data, how likely is it that they will vote in favor of the candidate?"  
-I would say that this is a predictive problem because we want to predict the outcome (likeiness of voting in favor of the candidate).  
+I would say that this is a predictive problem because we want to predict the outcome (likeiness of voting in favor of the candidate) based on a given set of attributes.  
 "How would a voter’s likelihood of support for the candidate change if they had personal contact with the candidate?"  
-I would say that this is an inferential problem because we want to see if there is a relationship between the outcome and a particular predictor (personal contact w/ candidate).
+I would say that this is an inferential problem because we want to see if there is a relationship between the outcome and a particular predictor (personal contact w/ candidate and likelihood of support).
 
 
 # Exploratory Data Analysis
