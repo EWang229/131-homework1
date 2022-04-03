@@ -83,7 +83,15 @@ mpg_numerical <- mpg %>% select(displ, cyl, cty, hwy)
 corr_mpg <- cor(mpg_numerical)
 corrplot(corr_mpg, method = "square", order = "alphabet", type = "lower")
 ```
-The variables that are positively correlated are cty and hwy, and disply and cyl.  
+(**Note**: After talking to others and consulting the internet, I decided not to include year into this correlation chart. The reasoning is that the use of year here is a categorical variable (similar to a zip code), so it probably would not make sense to see if it has correlation with other variables. However, if it is required for the answer, year had no significant correlation with other variables-- year was very slightly positively correlated with cyl and displ. I included an extra figure below)  
+The variables that are positively correlated are cty and hwy, and displ and cyl.  
 The variables that are negatively correlated are displ and cty, displ and hwy, cyl and cty, and cyl and hwy.  
 These relationships make sense because if two variables are strongly and positively correlated, then it would make sense that both of them would have similar correlations to another given variable in the dataset. This is why cty and hwy are both negatively correlated with displ and cyl.  
 Thinking about this problem in a non-mathematical way, these relationships do make sense. If a car has good city mpg, then it should almost certainly have the same/better highway mpg. Additionally, the engine displacement calculation depends on the number of cylinders. A higher number of cylinders means more engine displacement, so the positive correlation between displ and cyl makes sense as well.
+
+## Alternate Correlation Plot with Year Included
+```{r}
+mpg_numerical <- mpg %>% select(displ, cyl, cty, hwy, year)
+corr_mpg <- cor(mpg_numerical)
+corrplot(corr_mpg, method = "square", order = "alphabet", type = "lower")
+```
